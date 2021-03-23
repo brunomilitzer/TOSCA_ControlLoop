@@ -1,0 +1,8 @@
+<ngb-accordion activeIds="" title="CL Type A" [closeOthers]="true" #CLTypeA>
+  <app-cl-item
+    *ngFor="let clEl of clList.cls; let i = index"
+    [cl]="clEl"
+    [index]="i"
+    [id]="CLTypeA.activeIds">
+  </app-cl-item>
+</ngb-accordion>
