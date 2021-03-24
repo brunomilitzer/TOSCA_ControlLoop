@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlLoop } from '../../../../models/cl.model';
 
 @Component( {
@@ -11,13 +11,10 @@ export class ClItemComponent implements OnInit, OnDestroy {
   @Input() index: number;
   @Input() id: string;
   @Input() title: string;
-
-  constructor( private cd: ChangeDetectorRef ) {
-  }
+  public isCollapsed = false;
 
   ngOnInit(): void {
     console.log( '======== Cl Item Component Init ========' );
-    console.log( this.cl );
   }
 
   ngOnDestroy(): void {

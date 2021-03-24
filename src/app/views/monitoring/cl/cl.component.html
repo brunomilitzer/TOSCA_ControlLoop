@@ -1,8 +1,16 @@
-<ngb-accordion activeIds="" title="CL Type A" [closeOthers]="true" #CLTypeA>
-  <app-cl-item
-    *ngFor="let clEl of clList.cls; let i = index"
-    [cl]="clEl"
-    [index]="i"
-    [id]="CLTypeA.activeIds">
-  </app-cl-item>
+<ngb-accordion activeIds="clPanel.id">
+  <ngb-panel id="{{ 'CLType' + numberToLetterConverter(i)}}"
+             title="{{ 'CL type ' + numberToLetterConverter(i) }}"
+             cardClass="cl-component-item"
+             *ngFor="let clEl of clList.cls; let i = index;"
+             #clPanel>
+    <ng-template ngbPanelContent>
+      <app-cl-item
+        [cl]="clEl"
+        [title]="clPanel.title"
+        [id]="clPanel.id"
+        [index]="i">
+      </app-cl-item>
+    </ng-template>
+  </ngb-panel>
 </ngb-accordion>

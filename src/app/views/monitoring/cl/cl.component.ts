@@ -30,6 +30,12 @@ export class ClComponent implements OnInit, AfterViewInit, OnDestroy {
     this.cd.detectChanges();
   }
 
+  numberToLetterConverter( num: number ): string {
+    const newNum = num + 65;
+
+    return String.fromCharCode( newNum );
+  }
+
   ngOnDestroy(): void {
     console.log( '======== CL Component Destroy ========' );
     this.clsSubscription.unsubscribe();
