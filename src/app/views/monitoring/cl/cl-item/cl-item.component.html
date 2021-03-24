@@ -1,11 +1,9 @@
 <li class="list-group">
-  <div class="btn btn-ok list-group-item" id="{{ 'CLInstance' + index }}"
+  <div appStateColor [state]="cl.state" id="{{ 'CLInstance' + index }}"
        (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">{{ cl.name }}</div>
   <div class="cl-inner-panel" [(ngbCollapse)]="!isCollapsed" #collapse="ngbCollapse">
-    <div class="list-group">
-      <button class="btn btn-warning">{{ cl.description }}</button>
-      <button class="btn btn-ok">{{ cl.description }}</button>
-      <button class="btn btn-error">{{ cl.description }}</button>
+    <div class="list-group" *ngFor="let clEl of cl.elements;">
+      <button appStateColor [state]="clEl.state">{{ clEl.description }}</button>
     </div>
   </div>
 </li>

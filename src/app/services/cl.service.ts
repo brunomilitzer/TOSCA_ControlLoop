@@ -13,7 +13,7 @@ export class ClService {
   }
 
   public getControlLoopList(): ControlLoopList {
-    console.log( '======== Fetching Control Loop List ========' );
+    console.log( '======== Fetching ControlLoop List ========' );
     return this.clList;
   }
 

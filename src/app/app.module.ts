@@ -9,6 +9,7 @@ import { CommissioningComponent } from './views/commissioning/commissioning.comp
 import { AppRoutingModule } from './app-routing.module';
 import { ClItemComponent } from './views/monitoring/cl/cl-item/cl-item.component';
 import { ClComponent } from './views/monitoring/cl/cl.component';
+import { SateColorDirective } from './directives/sate-color.directive';
 
 @NgModule( {
   declarations: [
@@ -17,7 +18,8 @@ import { ClComponent } from './views/monitoring/cl/cl.component';
     MonitoringComponent,
     CommissioningComponent,
     ClComponent,
-    ClItemComponent
+    ClItemComponent,
+    SateColorDirective
   ],
   imports: [
     BrowserModule,

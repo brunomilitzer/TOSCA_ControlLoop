@@ -3,29 +3,38 @@
   margin: 0;
 }
 
-.btn-ok,
-.btn-warning,
-.btn-error {
+.btn-unitialised,
+.btn-passive,
+.btn-running,
+.btn-default {
   border: none;
   border-radius: 0;
 }
-.btn-ok .cl-inner-panel .list-group button,
-.btn-warning .cl-inner-panel .list-group button,
-.btn-error .cl-inner-panel .list-group button {
+.btn-unitialised .cl-inner-panel .list-group button,
+.btn-passive .cl-inner-panel .list-group button,
+.btn-running .cl-inner-panel .list-group button,
+.btn-default .cl-inner-panel .list-group button {
   border: solid 1px #151515;
 }
 
-.btn-ok {
-  background-color: green;
-}
-
-.btn-warning {
-  background-color: yellow;
+.btn-unitialised {
+  background-color: grey;
   color: black;
 }
 
-.btn-error {
-  background-color: red;
+.btn-passive {
+  background-color: #ffff80;
+  color: black;
+}
+
+.btn-running {
+  background-color: #80ff80;
+  color: black;
+}
+
+.btn-default {
+  background-color: #668cff;
+  color: black;
 }
 
 /*# sourceMappingURL=cl-item.component.css.map */

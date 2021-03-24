@@ -3,9 +3,10 @@
   margin: 0;
 }
 
-.btn-ok,
-.btn-warning,
-.btn-error {
+.btn-unitialised,
+.btn-passive,
+.btn-running,
+.btn-default {
   border: none;
   border-radius: 0;
 
@@ -18,15 +19,22 @@
   }
 }
 
-.btn-ok {
-  background-color: green;
-}
-
-.btn-warning {
-  background-color: yellow;
+.btn-unitialised {
+  background-color: grey;
   color: black;
 }
 
-.btn-error {
-  background-color: red;
+.btn-passive {
+  background-color: #ffff80;
+  color: black;
+}
+
+.btn-running {
+  background-color: #80ff80;
+  color: black;
+}
+
+.btn-default {
+  background-color: #668cff;
+  color: black;
 }
