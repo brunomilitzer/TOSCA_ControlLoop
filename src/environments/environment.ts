@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:6969/onap/controlloop/v2',
+  username: 'healthcheck',
+  password: 'zb!XztG34'
 };
 
 /*

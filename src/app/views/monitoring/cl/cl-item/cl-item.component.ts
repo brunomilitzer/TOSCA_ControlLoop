@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ControlLoop } from '../../../../models/cl.model';
+import { ControlLoop } from '../../../../_models/cl.model';
 
 @Component( {
   selector: 'app-cl-item',

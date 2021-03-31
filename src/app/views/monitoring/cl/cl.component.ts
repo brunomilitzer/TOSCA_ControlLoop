@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ControlLoopList } from '../../../models/cl-list.model';
-import { ClService } from '../../../services/cl.service';
+import { ControlLoopList } from '../../../_models/cl-list.model';
+import { ClService } from '../../../_services/cl.service';
 
 @Component( {
   selector: 'app-cl-component',

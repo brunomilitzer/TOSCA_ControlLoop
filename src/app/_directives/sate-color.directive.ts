@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
-import { ControlLoopState } from '../models/enums/cl-state.enum';
+import { ControlLoopState } from '../_models/_enums/cl-state.enum';
 
 @Directive( {
   selector: '[appStateColor]'

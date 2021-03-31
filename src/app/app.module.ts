@@ -9,7 +9,10 @@ import { CommissioningComponent } from './views/commissioning/commissioning.comp
 import { AppRoutingModule } from './app-routing.module';
 import { ClItemComponent } from './views/monitoring/cl/cl-item/cl-item.component';
 import { ClComponent } from './views/monitoring/cl/cl.component';
-import { SateColorDirective } from './directives/sate-color.directive';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SateColorDirective } from './_directives/sate-color.directive';
+import { BasicAuthInterceptorService } from './_helpers/basic-auth-interceptor.service';
+import { ErrorInterceptorService } from './_helpers/error-interceptor.service';
 
 @NgModule( {
   declarations: [
@@ -23,10 +26,20 @@ import { SateColorDirective } from './directives/sate-color.directive';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: BasicAuthInterceptorService,
+    multi: true
+  },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true
+    } ],
   bootstrap: [ AppComponent ]
 } )
 export class AppModule {
