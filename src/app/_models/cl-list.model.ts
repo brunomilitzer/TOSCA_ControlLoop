@@ -3,6 +3,15 @@ import { ControlLoop } from './cl.model';
 export class ControlLoopList {
   private controlLoops: ControlLoop[] = [];
 
+  static fromJSON( data: any ): ControlLoopList {
+    const clList: ControlLoopList = new ControlLoopList();
+    data.controlLoopList.forEach( ( newCL: ControlLoop ) => {
+      clList.push( newCL );
+    } );
+
+    return clList;
+  }
+
   public get length(): number {
     return this.controlLoops.length;
   }
@@ -23,7 +32,7 @@ export class ControlLoopList {
   }
 
   public isEmpty(): boolean {
-    return this.length === 0;
+    return this.cls.length === 0;
   }
 
   public clear(): void {

@@ -13,17 +13,14 @@ export class DataService {
   constructor( private http: HttpClient, private clService: ClService ) {
   }
 
-  fetchControlLoopList(): Observable<ControlLoopList> {
+  public fetchControlLoopList(): Observable<ControlLoopList> {
     return this.http.get( `${ API_URL }/instantiation` )
       .pipe(
         map( responseData => {
-          const clList = new ControlLoopList();
-          console.log( responseData );
-
-          return clList;
+          return ControlLoopList.fromJSON( responseData );
         } ),
         tap( clList => {
-          this.clService.setControlLoopListInstatiation( clList.cls );
+          this.clService.setControlLoopListInstatiation( clList );
         } )
       );
   }

@@ -17,7 +17,9 @@ export class ClResolverService implements Resolve<ControlLoopList> {
     const controlLoopList = this.clService.getControlLoopList();
 
     if ( controlLoopList.isEmpty() ) {
-      return this.dataStorageService.fetchControlLoopList();
+      const clList = this.dataStorageService.fetchControlLoopList();
+      console.log( clList );
+      return clList;
     }
 
     return controlLoopList;

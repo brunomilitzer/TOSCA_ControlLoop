@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ControlLoopList } from '../_models/cl-list.model';
-import { ControlLoop } from '../_models/cl.model';
 
 @Injectable( { providedIn: 'root' } )
 export class ClService {
@@ -11,12 +10,9 @@ export class ClService {
   constructor() {
   }
 
-  public setControlLoopListInstatiation( clList: ControlLoop[] ): void {
-    console.log( typeof clList === 'object' );
-    if ( clList instanceof ControlLoopList ) {
-      this.clList = new ControlLoopList();
-      this.clsChanged.next( this.clList );
-    }
+  public setControlLoopListInstatiation( clList: ControlLoopList ): void {
+    this.clList = clList;
+    this.clsChanged.next( this.clList );
   }
 
   public getControlLoopList(): ControlLoopList {
