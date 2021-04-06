@@ -10,9 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ClItemComponent } from './views/monitoring/cl/cl-item/cl-item.component';
 import { ClComponent } from './views/monitoring/cl/cl.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { SateColorDirective } from './_directives/sate-color.directive';
+import { StateColorDirective } from './_directives/state-color.directive';
 import { BasicAuthInterceptorService } from './_helpers/basic-auth-interceptor.service';
 import { ErrorInterceptorService } from './_helpers/error-interceptor.service';
+import { OrderedStateColorDirective } from './_directives/ordered-state-color.directive';
 
 @NgModule( {
   declarations: [
@@ -22,7 +23,8 @@ import { ErrorInterceptorService } from './_helpers/error-interceptor.service';
     CommissioningComponent,
     ClComponent,
     ClItemComponent,
-    SateColorDirective
+    StateColorDirective,
+    OrderedStateColorDirective
   ],
   imports: [
     BrowserModule,

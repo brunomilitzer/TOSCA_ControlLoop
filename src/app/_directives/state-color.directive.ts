@@ -4,7 +4,7 @@ import { ControlLoopState } from '../_models/_enums/cl-state.enum';
 @Directive( {
   selector: '[appStateColor]'
 } )
-export class SateColorDirective implements OnInit {
+export class StateColorDirective implements OnInit {
   @Input() state: ControlLoopState;
 
   protected elClass: string[] = [];

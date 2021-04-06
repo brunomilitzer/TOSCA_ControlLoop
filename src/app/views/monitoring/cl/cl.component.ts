@@ -19,7 +19,6 @@ export class ClComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log( '======== CL Component Init ========' );
     this.clsSubscription = this.clService.clsChanged.subscribe(
       ( clList: ControlLoopList ) => {
-        console.log( 'hello world' );
         this.clList = clList;
       }
     );
