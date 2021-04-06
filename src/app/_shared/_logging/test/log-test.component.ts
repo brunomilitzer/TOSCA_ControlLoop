@@ -12,4 +12,8 @@ export class LogTestComponent {
   testLog(): void {
     this.logger.log( 'Test the `log()` Method' );
   }
+
+  clearLog(): void {
+    this.logger.clear();
+  }
 }

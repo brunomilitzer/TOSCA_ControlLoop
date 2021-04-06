@@ -75,14 +75,7 @@ export class LogLocalStorage extends LogPublishers {
       console.log( ex );
     }
 
-
     return of( ret );
   }
 
-}
-
-class LogPublisherConfig {
-  loggerName: string;
-  loggerLocation: string;
-  isActive: boolean;
 }

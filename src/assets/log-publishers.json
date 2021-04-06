@@ -7,6 +7,6 @@
   {
     "loggerName": "localStorage",
     "loggerLocation": "logging",
-    "isActive": true
+    "isActive": false
   }
 ]
