@@ -10,7 +10,6 @@ const PASSWORD = environment.password;
 export class BasicAuthInterceptorService implements HttpInterceptor {
 
   intercept( req: HttpRequest<any>, next: HttpHandler ): Observable<HttpEvent<any>> {
-    console.log( '======== Basic Auth Interceptor ========' );
 
     const modReq = req.clone( {
       setHeaders: {

@@ -8,7 +8,6 @@ export class ErrorInterceptorService implements HttpInterceptor {
 
   intercept( req: HttpRequest<any>, next: HttpHandler ): Observable<HttpEvent<any>> {
     return next.handle( req ).pipe( catchError( err => {
-      console.log( '======== Error Interceptor ========' );
 
       let errorMessage = 'An uknown error occured!';
 

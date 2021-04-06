@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../_services/data.service';
+import { LogService } from '../../_shared/_logging/_service/log.service';
 
 @Component( {
   selector: 'tosca-monitoring',
@@ -9,11 +10,11 @@ import { DataService } from '../../_services/data.service';
 export class MonitoringComponent implements OnInit {
   public isCollapsed = false;
 
-  constructor( private dataService: DataService ) {
+  constructor( private logger: LogService, private dataService: DataService ) {
   }
 
   ngOnInit(): void {
-    console.log( '======== Monitoring Component Init ========' );
+    this.logger.debug( '======== Monitoring Component Init ========' );
     this.dataService.fetchControlLoopList();
   }
 }

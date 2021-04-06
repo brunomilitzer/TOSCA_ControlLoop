@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlLoop } from '../../../../_models/cl.model';
+import { LogService } from '../../../../_shared/_logging/_service/log.service';
 
 @Component( {
   selector: 'tosca-cl-item',
@@ -13,11 +14,14 @@ export class ClItemComponent implements OnInit, OnDestroy {
   @Input() title: string;
   public isCollapsed = false;
 
+  constructor( private logger: LogService ) {
+  }
+
   ngOnInit(): void {
-    console.log( '======== Cl Item Component Init ========' );
+    this.logger.debug( '======== Cl Item Component Init ========' );
   }
 
   ngOnDestroy(): void {
-    console.log( '======== Cl Panel Component Destroy ========' );
+    this.logger.debug( '======== Cl Panel Component Destroy ========' );
   }
 }

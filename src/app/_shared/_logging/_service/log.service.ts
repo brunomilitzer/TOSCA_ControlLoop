@@ -65,7 +65,9 @@ export class LogEntry {
 // ****************************************************
 // Log Service Class
 // ****************************************************
-@Injectable()
+@Injectable( {
+  providedIn: 'root'
+} )
 export class LogService {
   level: LogLevel = LogLevel.All;
   logWithDate = true;

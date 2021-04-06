@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostBinding, Input, OnInit, Renderer2 } from '@a
 import { ControlLoopState } from '../_models/_enums/cl-state.enum';
 
 @Directive( {
-  selector: '[appStateColor]'
+  selector: '[toscaStateColor]'
 } )
 export class StateColorDirective implements OnInit {
   @Input() state: ControlLoopState;
@@ -34,19 +34,15 @@ export class StateColorDirective implements OnInit {
     switch ( this.state ) {
       case ControlLoopState.UNINITIALISED:
         this.elClass.push( 'btn-unitialised' );
-        console.log( 'Current State: unitialised' );
         break;
       case ControlLoopState.PASSIVE:
         this.elClass.push( 'btn-passive' );
-        console.log( 'Current State: passive' );
         break;
       case ControlLoopState.RUNNING:
         this.elClass.push( 'btn-running' );
-        console.log( 'Current State: running' );
         break;
       default:
         this.elClass.push( 'btn-default' );
-        console.log( 'Current State: default' );
         break;
     }
   }

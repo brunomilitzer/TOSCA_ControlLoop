@@ -26,7 +26,9 @@ class LogPublisherConfig {
 }
 
 
-@Injectable()
+@Injectable( {
+  providedIn: 'root'
+} )
 export class LogPublisherService {
 
   // Public properties
@@ -74,8 +76,8 @@ export class LogPublisherService {
     msg = 'Status: ' + error.status;
     msg += ' - Status Text: ' + error.statusText;
 
-    if ( error.json() ) {
-      msg += ' - Exception Message: ' + error.json().exceptionMessage;
+    if ( error.exceptionMessage ) {
+      msg += ' - Exception Message: ' + error.exceptionMessage;
     }
 
     errors.push( msg );

@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '
 import { Subscription } from 'rxjs';
 import { ControlLoopList } from '../../../_models/cl-list.model';
 import { ClService } from '../../../_services/cl.service';
+import { LogService } from '../../../_shared/_logging/_service/log.service';
 
 @Component( {
   selector: 'tosca-cl-component',
@@ -12,11 +13,11 @@ export class ClComponent implements OnInit, AfterViewInit, OnDestroy {
   public clsSubscription: Subscription;
   public clList: ControlLoopList;
 
-  constructor( private clService: ClService, private cd: ChangeDetectorRef ) {
+  constructor( private logger: LogService, private clService: ClService, private cd: ChangeDetectorRef ) {
   }
 
   ngOnInit(): void {
-    console.log( '======== CL Component Init ========' );
+    this.logger.debug( '======== CL Component Init ========' );
     this.clsSubscription = this.clService.clsChanged.subscribe(
       ( clList: ControlLoopList ) => {
         this.clList = clList;
@@ -37,7 +38,7 @@ export class ClComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log( '======== CL Component Destroy ========' );
+    this.logger.debug( '======== CL Component Destroy ========' );
     this.clsSubscription.unsubscribe();
   }
 

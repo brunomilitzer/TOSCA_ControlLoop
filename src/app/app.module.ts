@@ -15,8 +15,6 @@ import { BasicAuthInterceptorService } from './_helpers/basic-auth-interceptor.s
 import { ErrorInterceptorService } from './_helpers/error-interceptor.service';
 import { OrderedStateColorDirective } from './_directives/ordered-state-color.directive';
 import { LogTestComponent } from './_shared/_logging/test/log-test.component';
-import { LogService } from './_shared/_logging/_service/log.service';
-import { LogPublisherService } from './_shared/_logging/_service/log-publisher.service';
 
 @NgModule( {
   declarations: [
@@ -45,9 +43,7 @@ import { LogPublisherService } from './_shared/_logging/_service/log-publisher.s
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptorService,
       multi: true
-    },
-    LogService,
-    LogPublisherService
+    }
   ],
   bootstrap: [ AppComponent ]
 } )

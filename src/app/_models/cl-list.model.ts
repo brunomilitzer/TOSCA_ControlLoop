@@ -24,13 +24,6 @@ export class ControlLoopList {
     this.controlLoops.push( cl );
   }
 
-  public print(): void {
-    if ( this.controlLoops ) {
-      console.log( '======== Printing ControlLoop List ========' );
-      console.log( this.controlLoops );
-    }
-  }
-
   public isEmpty(): boolean {
     return this.cls.length === 0;
   }
