@@ -5,12 +5,12 @@
              *ngFor="let clEl of clList.cls; let i = index;"
              #clPanel>
     <ng-template ngbPanelContent>
-      <app-cl-item
+      <tosca-cl-item
         [cl]="clEl"
         [title]="clPanel.title"
         [id]="clPanel.id"
         [index]="i">
-      </app-cl-item>
+      </tosca-cl-item>
     </ng-template>
   </ngb-panel>
 </ngb-accordion>

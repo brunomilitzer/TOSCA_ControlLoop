@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../_services/data.service';
 
 @Component( {
-  selector: 'app-monitoring',
+  selector: 'tosca-monitoring',
   templateUrl: './monitoring.component.html',
   styleUrls: [ './monitoring.component.scss' ]
 } )

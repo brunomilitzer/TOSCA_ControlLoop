@@ -4,14 +4,14 @@ import { CommissioningComponent } from './views/commissioning/commissioning.comp
 import { MonitoringComponent } from './views/monitoring/monitoring.component';
 import { ClResolverService } from './_services/cl-resolver.service';
 
-const appRoutes: Routes = [
+const toscaRoutes: Routes = [
   { path: '', redirectTo: '/monitoring', pathMatch: 'full' },
   { path: 'commissioning', component: CommissioningComponent },
   { path: 'monitoring', component: MonitoringComponent, resolve: [ ClResolverService ] },
 ];
 
 @NgModule( {
-  imports: [ RouterModule.forRoot( appRoutes ) ],
+  imports: [ RouterModule.forRoot( toscaRoutes ) ],
   exports: [ RouterModule ]
 } )
 export class AppRoutingModule {

@@ -4,7 +4,7 @@ import { ControlLoopList } from '../../../_models/cl-list.model';
 import { ClService } from '../../../_services/cl.service';
 
 @Component( {
-  selector: 'app-cl-component',
+  selector: 'tosca-cl-component',
   templateUrl: './cl.component.html',
   styleUrls: [ './cl.component.scss' ]
 } )

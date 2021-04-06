@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-commissioning',
+@Component( {
+  selector: 'tosca-commissioning',
   templateUrl: './commissioning.component.html',
-  styleUrls: ['./commissioning.component.scss']
-})
+  styleUrls: [ './commissioning.component.scss' ]
+} )
 export class CommissioningComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

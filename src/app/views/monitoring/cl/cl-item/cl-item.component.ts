@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlLoop } from '../../../../_models/cl.model';
 
 @Component( {
-  selector: 'app-cl-item',
+  selector: 'tosca-cl-item',
   templateUrl: './cl-item.component.html',
   styleUrls: [ './cl-item.component.scss' ]
 } )
