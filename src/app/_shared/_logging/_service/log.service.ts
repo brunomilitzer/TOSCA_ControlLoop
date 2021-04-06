@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LogPublisher } from '../_publisher/log-publisher';
+import { LogPublishers } from '../_publisher/log-publishers';
 import { LogPublisherService } from './log-publisher.service';
 
 // ****************************************************
@@ -69,7 +69,7 @@ export class LogEntry {
 export class LogService {
   level: LogLevel = LogLevel.All;
   logWithDate = true;
-  publishers: LogPublisher[];
+  publishers: LogPublishers[];
 
   constructor( private publishersService: LogPublisherService ) {
     // Set publishers
@@ -95,6 +95,12 @@ export class LogService {
 
   log( msg: string, ...optionalParams: any[] ): void {
     this.writeToLog( msg, LogLevel.All, optionalParams );
+  }
+
+  clear(): void {
+    for ( const logger of this.publishers ) {
+      logger.clear().subscribe( response => console.log( response ) );
+    }
   }
 
   // Private Methods
