@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +19,7 @@ import { CommissioningComponent } from './modules/commissioning/commissioning.co
 import { MonitoringComponent } from './modules/monitoring/monitoring.component';
 import { ClItemComponent } from './modules/monitoring/cl/cl-item/cl-item.component';
 import { ClComponent } from './modules/monitoring/cl/cl.component';
+import { GlobalErrorInterceptor } from './modules/core/interceptors/global-error-interceptor';
 
 @NgModule( {
   declarations: [
@@ -38,11 +39,16 @@ import { ClComponent } from './modules/monitoring/cl/cl.component';
     NgbModule,
     AppRoutingModule
   ],
-  providers: [ {
-    provide: HTTP_INTERCEPTORS,
-    useClass: BasicAuthInterceptorService,
-    multi: true
-  },
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorInterceptor
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BasicAuthInterceptorService,
+      multi: true
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptorService,
