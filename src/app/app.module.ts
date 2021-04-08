@@ -20,10 +20,12 @@ import { MonitoringComponent } from './modules/monitoring/monitoring.component';
 import { ClItemComponent } from './modules/monitoring/cl/cl-item/cl-item.component';
 import { ClComponent } from './modules/monitoring/cl/cl.component';
 import { GlobalErrorInterceptor } from './modules/core/interceptors/global-error-interceptor';
+import { AlertComponent } from './shared/alert/component/alert.component';
 
 @NgModule( {
   declarations: [
     AppComponent,
+    AlertComponent,
     StateColorDirective,
     OrderedStateColorDirective,
     LogTestComponent,

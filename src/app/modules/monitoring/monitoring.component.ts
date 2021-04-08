@@ -15,7 +15,6 @@ export class MonitoringComponent implements OnInit {
 
   ngOnInit(): void {
     this.logger.debug( '======== Monitoring Component Init ========' );
-    /*this.dataService.fetchControlLoopList();*/
-    throw Error( 'Test!' );
+    this.dataService.fetchControlLoopList();
   }
 }
