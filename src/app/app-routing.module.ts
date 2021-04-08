@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommissioningComponent } from './views/commissioning/commissioning.component';
-import { MonitoringComponent } from './views/monitoring/monitoring.component';
-import { ClResolverService } from './_services/cl-resolver.service';
+import { CommissioningComponent } from './modules/commissioning/commissioning.component';
+import { MonitoringComponent } from './modules/monitoring/monitoring.component';
+import { ClResolverService } from './services/cl-resolver.service';
 
 const toscaRoutes: Routes = [
   { path: '', redirectTo: '/monitoring', pathMatch: 'full' },

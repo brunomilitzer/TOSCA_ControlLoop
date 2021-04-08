@@ -1,9 +1,0 @@
-<li class="list-group">
-  <div appOrderedStateColor [orderedState]="cl.orderedState" id="{{ 'CLInstance' + index }}"
-       (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">{{ cl.name }}</div>
-  <div class="cl-inner-panel" [(ngbCollapse)]="!isCollapsed" #collapse="ngbCollapse">
-    <div class="list-group" *ngFor="let clEl of cl.elements;">
-      <button appOrderedStateColor [orderedState]="clEl.orderedState">{{ clEl.description }}</button>
-    </div>
-  </div>
-</li>

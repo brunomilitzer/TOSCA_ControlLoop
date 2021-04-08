@@ -6,25 +6,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { BasicAuthInterceptorService } from './_helpers/basic-auth-interceptor.service';
-import { ErrorInterceptorService } from './_helpers/error-interceptor.service';
+import { LogTestComponent } from './shared/logging/test/log-test.component';
 
-import { StateColorDirective } from './_directives/state-color.directive';
-import { OrderedStateColorDirective } from './_directives/ordered-state-color.directive';
+import { BasicAuthInterceptorService } from './modules/core/interceptors/basic-auth-interceptor.service';
+import { HttpErrorInterceptorService } from './modules/core/interceptors/http-error-interceptor.service';
 
-import { AlertComponent } from './_shared/_alert/alert.component';
-import { LogTestComponent } from './_shared/_logging/test/log-test.component';
+import { StateColorDirective } from './modules/core/directives/state-color.directive';
+import { OrderedStateColorDirective } from './modules/core/directives/ordered-state-color.directive';
 
-import { HeaderComponent } from './views/header/header.component';
-import { CommissioningComponent } from './views/commissioning/commissioning.component';
-import { MonitoringComponent } from './views/monitoring/monitoring.component';
-import { ClItemComponent } from './views/monitoring/cl/cl-item/cl-item.component';
-import { ClComponent } from './views/monitoring/cl/cl.component';
+import { HeaderComponent } from './modules/header/header.component';
+import { CommissioningComponent } from './modules/commissioning/commissioning.component';
+import { MonitoringComponent } from './modules/monitoring/monitoring.component';
+import { ClItemComponent } from './modules/monitoring/cl/cl-item/cl-item.component';
+import { ClComponent } from './modules/monitoring/cl/cl.component';
 
 @NgModule( {
   declarations: [
     AppComponent,
-    AlertComponent,
     StateColorDirective,
     OrderedStateColorDirective,
     LogTestComponent,
@@ -47,7 +45,7 @@ import { ClComponent } from './views/monitoring/cl/cl.component';
   },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptorService,
+      useClass: HttpErrorInterceptorService,
       multi: true
     }
   ],
