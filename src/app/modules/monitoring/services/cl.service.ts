@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ControlLoopList } from '../models/cl-list.model';
+import { ControlLoopList } from '../../../models/cl-list.model';
 
 @Injectable( { providedIn: 'root' } )
 export class ClService {

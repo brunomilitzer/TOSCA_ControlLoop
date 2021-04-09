@@ -1,8 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ControlLoopList } from '../../../models/cl-list.model';
+import { ControlLoopList } from '../../../../models/cl-list.model';
 import { LogService } from '../../../shared/logging/service/log.service';
-import { ClService } from '../../../services/cl.service';
+import { ClService } from '../../services/cl.service';
 
 @Component( {
   selector: 'tosca-cl-component',

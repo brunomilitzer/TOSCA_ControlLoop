@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ControlLoop } from '../../../../models/cl.model';
+import { ControlLoop } from '../../../../../models/cl.model';
 import { LogService } from '../../../../shared/logging/service/log.service';
 
 @Component( {

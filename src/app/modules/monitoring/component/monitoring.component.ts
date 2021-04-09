@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../../shared/logging/service/log.service';
-import { DataService } from '../../services/data.service';
+import { DataService } from '../../shared/services/data.service';
 
 @Component( {
   selector: 'tosca-monitoring',
