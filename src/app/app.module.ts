@@ -8,7 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { LogTestComponent } from './shared/logging/test/log-test.component';
 
-import { BasicAuthInterceptorService } from './modules/core/interceptors/basic-auth-interceptor.service';
+import { BasicAuthInterceptor } from './modules/core/interceptors/basic-auth.interceptor';
+import { GlobalErrorInterceptor } from './modules/core/interceptors/global-error.interceptor';
 import { HttpErrorInterceptorService } from './modules/core/interceptors/http-error-interceptor.service';
 
 import { StateColorDirective } from './modules/core/directives/state-color.directive';
@@ -19,7 +20,6 @@ import { CommissioningComponent } from './modules/commissioning/commissioning.co
 import { MonitoringComponent } from './modules/monitoring/monitoring.component';
 import { ClItemComponent } from './modules/monitoring/cl/cl-item/cl-item.component';
 import { ClComponent } from './modules/monitoring/cl/cl.component';
-import { GlobalErrorInterceptor } from './modules/core/interceptors/global-error-interceptor';
 import { AlertComponent } from './shared/alert/component/alert.component';
 
 @NgModule( {
@@ -48,7 +48,7 @@ import { AlertComponent } from './shared/alert/component/alert.component';
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: BasicAuthInterceptorService,
+      useClass: BasicAuthInterceptor,
       multi: true
     },
     {

@@ -5,12 +5,6 @@ import { filter } from 'rxjs/operators';
 import { AlertSettings } from '../model/alert-settings';
 import { LogService } from '../../logging/service/log.service';
 
-export interface AlertResponseData {
-  message: string;
-  title: string;
-  status?: number;
-}
-
 @Injectable( {
   providedIn: 'root'
 } )

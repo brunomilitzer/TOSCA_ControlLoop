@@ -7,13 +7,15 @@ const USERNAME = environment.username;
 const PASSWORD = environment.password;
 
 @Injectable()
-export class BasicAuthInterceptorService implements HttpInterceptor {
+export class BasicAuthInterceptor implements HttpInterceptor {
 
   intercept( req: HttpRequest<any>, next: HttpHandler ): Observable<HttpEvent<any>> {
 
     const modReq = req.clone( {
       setHeaders: {
-        Authorization: 'Basic ' + btoa( USERNAME + ':' + PASSWORD )
+        Authorization: 'Basic ' + btoa( USERNAME + ':' + PASSWORD ),
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       withCredentials: true
     } );

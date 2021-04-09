@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Alert } from '../model/alert.model';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
 import { AlertService } from '../services/alert.service';
 import { AlertSettings } from '../model/alert-settings';
 
@@ -19,7 +18,7 @@ export class AlertComponent implements OnInit, OnDestroy {
   alertSubscription: Subscription;
   routeSubscription: Subscription;
 
-  constructor( private router: Router, private alertService: AlertService ) {
+  constructor( private alertService: AlertService ) {
   }
 
   ngOnInit(): void {
@@ -59,7 +58,7 @@ export class AlertComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const classes = [ 'alert', 'alert-dismissable' ];
+    const classes = [ 'alert', 'alert-dismissible' ];
 
     const alertTypeClass = {
       [AlertSettings.SUCCESS]: 'alert alert-success',
