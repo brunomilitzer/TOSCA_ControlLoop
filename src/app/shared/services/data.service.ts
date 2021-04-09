@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { map, tap } from 'rxjs/operators';
-import { ControlLoopList } from '../../../models/cl-list.model';
-import { ClService } from '../../monitoring/services/cl.service';
+import { ControlLoopList } from '../../models/cl-list.model';
+import { ClService } from '../../modules/monitoring/services/cl.service';
 
 const API_URL = environment.apiUrl;
 

@@ -1,11 +1,11 @@
 import { Directive, ElementRef, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
-import { ControlLoopState } from '../../../models/enums/cl-state.enum';
+import { ControlLoopOrderedState } from '../../models/enums/cl-ordered-state.enum';
 
 @Directive( {
-  selector: '[toscaStateColor]'
+  selector: '[toscaOrderedStateColor]'
 } )
-export class StateColorDirective implements OnInit {
-  @Input() state: ControlLoopState;
+export class OrderedStateColorDirective implements OnInit {
+  @Input() orderedState: ControlLoopOrderedState;
 
   protected elClass: string[] = [];
 
@@ -31,14 +31,14 @@ export class StateColorDirective implements OnInit {
   private checkState(): void {
     this.elClass.push( 'btn' );
 
-    switch ( this.state ) {
-      case ControlLoopState.UNINITIALISED:
+    switch ( this.orderedState ) {
+      case ControlLoopOrderedState.UNINITIALISED:
         this.elClass.push( 'btn-unitialised' );
         break;
-      case ControlLoopState.PASSIVE:
+      case ControlLoopOrderedState.PASSIVE:
         this.elClass.push( 'btn-passive' );
         break;
-      case ControlLoopState.RUNNING:
+      case ControlLoopOrderedState.RUNNING:
         this.elClass.push( 'btn-running' );
         break;
       default:

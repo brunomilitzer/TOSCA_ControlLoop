@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommissioningComponent } from './modules/commissioning/commissioning.component';
+import { CommissioningComponent } from './modules/commissioning/component/commissioning.component';
 import { MonitoringComponent } from './modules/monitoring/component/monitoring.component';
 import { ClResolverService } from './modules/monitoring/services/cl-resolver.service';
 

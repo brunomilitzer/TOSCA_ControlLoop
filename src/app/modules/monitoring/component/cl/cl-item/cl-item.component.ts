@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlLoop } from '../../../../../models/cl.model';
-import { LogService } from '../../../../shared/logging/service/log.service';
+import { LogService } from '../../../../../shared/logging/service/log.service';
 
 @Component( {
   selector: 'tosca-cl-item',

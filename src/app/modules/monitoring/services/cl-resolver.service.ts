@@ -2,10 +2,10 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-import { DataService } from '../../shared/services/data.service';
+import { DataService } from '../../../shared/services/data.service';
 import { ClService } from './cl.service';
 import { ControlLoopList } from '../../../models/cl-list.model';
-import { LogService } from '../../shared/logging/service/log.service';
+import { LogService } from '../../../shared/logging/service/log.service';
 
 @Injectable( { providedIn: 'root' } )
 export class ClResolverService implements Resolve<ControlLoopList> {
