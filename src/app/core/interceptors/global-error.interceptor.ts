@@ -12,6 +12,7 @@ export class GlobalErrorInterceptor implements ErrorHandler {
 
     this.logger.error( '======== Global Error Interceptor ========' );
     this.logger.error( error.message );
+    this.logger.log( error );
 
     this.alertService.error( error.message );
   }
