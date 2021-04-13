@@ -5,7 +5,6 @@ export class ControlLoopElementList {
   private clElements: ControlLoopElement[] = [];
 
   static fromJSON( data: any ): ControlLoopElementList {
-    console.log( data );
     const clElementList: ControlLoopElementList = new ControlLoopElementList();
     data.clElementStatistics.forEach( ( newCel: ControlLoopElement ) => {
       clElementList.push( newCel );
