@@ -1,0 +1,14 @@
+{
+  "clElementStatistics": [
+    {
+      "id": "709c62b3-8918-41b9-a747-d21eb79c6c20",
+      "participantId": {
+        "name": "PMSHInstance0",
+        "version": "1.0.1"
+      },
+      "timeStamp": "2021-01-10T13:45:00Z",
+      "controlLoopState": "PASSIVE",
+      "clElementUptime": 250
+    }
+  ]
+}

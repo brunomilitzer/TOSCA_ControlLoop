@@ -8,11 +8,11 @@ export class ControlLoopElement {
 
   constructor(
     public id: string,
-    public definition: ControlLoopDefinition,
-    public participantId: ControlLoopParticipantId,
     public state: ControlLoopState,
     public orderedState: ControlLoopOrderedState,
-    public description: string
+    public description: string,
+    public definition?: ControlLoopDefinition,
+    public participantId?: ControlLoopParticipantId
   ) {
   }
 }

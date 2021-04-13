@@ -1,9 +1,15 @@
+<tosca-cl-element
+  #clElementComponent>
+</tosca-cl-element>
 <li class="list-group">
   <div toscaOrderedStateColor [orderedState]="cl.orderedState" id="{{ 'CLInstance' + index }}"
        (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">{{ cl.name }}</div>
   <div class="cl-inner-panel" [(ngbCollapse)]="!isCollapsed" #collapse="ngbCollapse">
     <div class="list-group" *ngFor="let clEl of cl.elements;">
-      <button toscaOrderedStateColor [orderedState]="clEl.orderedState">{{ clEl.description }}</button>
+      <button
+        toscaOrderedStateColor
+        [orderedState]="clEl.orderedState"
+        (click)="clElementComponent.open(clEl.id)">{{ clEl.description }}</button>
     </div>
   </div>
 </li>

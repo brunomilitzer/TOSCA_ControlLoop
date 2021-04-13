@@ -5,15 +5,20 @@ import { ClItemComponent } from './component/cl/cl-item/cl-item.component';
 import { SharedModule } from '../../shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '../../core/core.module';
-import { CommonModule } from '@angular/common';
+import { ClElementComponent } from './component/clelement/cl-element.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule( {
   declarations: [
     MonitoringComponent,
     ClComponent,
-    ClItemComponent ],
+    ClItemComponent,
+    ClElementComponent
+  ],
   imports: [
-    CommonModule,
+    BrowserModule,
+    HttpClientModule,
     NgbModule,
     CoreModule,
     SharedModule

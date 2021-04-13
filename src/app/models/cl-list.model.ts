@@ -1,6 +1,7 @@
 import { ControlLoop } from './cl.model';
 
 export class ControlLoopList {
+
   private controlLoops: ControlLoop[] = [];
 
   static fromJSON( data: any ): ControlLoopList {
