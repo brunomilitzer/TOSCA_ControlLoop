@@ -20,7 +20,6 @@ export class BasicAuthInterceptor implements HttpInterceptor {
       withCredentials: true
     } );
 
-    console.log( modReq );
     return next.handle( modReq );
   }
 }

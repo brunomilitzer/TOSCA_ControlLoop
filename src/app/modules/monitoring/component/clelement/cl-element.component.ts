@@ -1,9 +1,7 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnDestroy, OnInit, Output } from '@angular/core';
-import { ClService } from '../../services/cl.service';
 import { ControlLoopElementList } from '../../../../models/cl-element-list.model';
 import { LogService } from '../../../../shared/logging/service/log.service';
-import { Subscription } from 'rxjs';
 
 @Component( {
   selector: 'tosca-cl-element',
@@ -12,33 +10,26 @@ import { Subscription } from 'rxjs';
 } )
 export class ClElementComponent implements OnInit, OnDestroy {
   @Output() isOpened = false;
-  clElSubscription: Subscription;
-  clElList: ControlLoopElementList;
+  private clElList: ControlLoopElementList;
 
   constructor(
     private logger: LogService,
-    private modalService: NgbModal,
-    private clElService: ClService ) {
+    private modalService: NgbModal ) {
   }
 
   ngOnInit(): void {
     this.logger.debug( '======== CL Element Component Init ========' );
-    this.clElSubscription = this.clElService.clElChanged.subscribe(
-      ( clElList: ControlLoopElementList ) => {
-        this.clElList = clElList;
-      } );
-
-    this.clElList = this.clElService.getControlLoopElementList();
   }
 
-  open( id: string ): void {
+  open( clElList: ControlLoopElementList ): void {
     console.log( 'Modal Open' );
-    const clEl = this.clElList.getClElById( id );
-    console.log( clEl );
     this.isOpened = !this.isOpened;
+    console.log( clElList );
+
+
   }
 
   ngOnDestroy(): void {
-    this.clElSubscription.unsubscribe();
+    this.logger.debug( '======== CL Element Component Destroy ========' );
   }
 }
