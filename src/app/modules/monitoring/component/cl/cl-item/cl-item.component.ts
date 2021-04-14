@@ -18,7 +18,7 @@ export class ClItemComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() title: string;
   public isCollapsed = false;
 
-  private clElmentSubscription: Subscription;
+  private clElementSubscription: Subscription;
   clElementList: ControlLoopElementList;
 
   constructor( private logger: LogService, private dataService: DataService, private clService: ClService ) {
@@ -29,7 +29,7 @@ export class ClItemComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.clElmentSubscription = this.dataService.fetchControlLoopElements( this.cl.name, this.cl.version )
+    this.clElementSubscription = this.dataService.fetchControlLoopElements( this.cl.name, this.cl.version )
       .subscribe( ( clElementList: ControlLoopElementList ) => {
         this.clElementList = clElementList;
       } );
@@ -37,6 +37,6 @@ export class ClItemComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.logger.debug( '======== Cl Panel Component Destroy ========' );
-    this.clElmentSubscription.unsubscribe();
+    this.clElementSubscription.unsubscribe();
   }
 }
