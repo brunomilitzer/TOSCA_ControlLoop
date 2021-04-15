@@ -6,15 +6,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '../../core/core.module';
 import { CommonModule } from '@angular/common';
-import { ClElementComponent } from './component/clelement/cl-element.component';
 
 @NgModule( {
   declarations: [
     MonitoringComponent,
     ClComponent,
-    ClItemComponent,
-    ClElementComponent
-  ],
+    ClItemComponent ],
   imports: [
     CommonModule,
     NgbModule,

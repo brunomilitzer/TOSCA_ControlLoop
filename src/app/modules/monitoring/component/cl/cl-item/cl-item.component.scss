@@ -4,11 +4,7 @@
 }
 
 .btn-unitialised,
-.btn-unitialised-2-passive,
-.btn-passive-2-unitialised,
 .btn-passive,
-.btn-passive-2-running,
-.btn-running-2-passive,
 .btn-running,
 .btn-default {
   border: none;
@@ -18,34 +14,27 @@
     .list-group {
       button {
         border: solid 1px #151515;
-        color: black;
       }
     }
   }
 }
 
 .btn-unitialised {
-  background-color: #808080;
-}
-
-.btn-unitialised-2-passive,
-.btn-passive-2-unitialised {
-  background-color: #c0c080;
+  background-color: grey;
+  color: black;
 }
 
 .btn-passive {
   background-color: #ffff80;
-}
-
-.btn-passive-2-running,
-.btn-running-2-passive {
-  background-color: #c0ff80;
+  color: black;
 }
 
 .btn-running {
   background-color: #80ff80;
+  color: black;
 }
 
 .btn-default {
   background-color: #668cff;
+  color: black;
 }

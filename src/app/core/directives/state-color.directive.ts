@@ -35,20 +35,8 @@ export class StateColorDirective implements OnInit {
       case ControlLoopState.UNINITIALISED:
         this.elClass.push( 'btn-unitialised' );
         break;
-      case ControlLoopState.UNINITIALISED2PASSIVE:
-        this.elClass.push( 'btn-unitialised-2-passive' );
-        break;
-      case ControlLoopState.PASSIVE2UNINITIALISED:
-        this.elClass.push( 'btn-passive-2-unitialised' );
-        break;
       case ControlLoopState.PASSIVE:
         this.elClass.push( 'btn-passive' );
-        break;
-      case ControlLoopState.PASSIVE2RUNNING:
-        this.elClass.push( 'btn-passive-2-running' );
-        break;
-      case ControlLoopState.RUNNING2PASSIVE:
-        this.elClass.push( 'btn-running-2-passive' );
         break;
       case ControlLoopState.RUNNING:
         this.elClass.push( 'btn-running' );
