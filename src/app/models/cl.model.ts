@@ -3,6 +3,16 @@ import { ControlLoopElement } from './cl-element.model';
 import { ControlLoopState } from './enums/cl-state.enum';
 import { ControlLoopOrderedState } from './enums/cl-ordered-state.enum';
 
+export interface IControlLoop {
+  name: string;
+  version: string;
+  definition: ControlLoopDefinition;
+  state: ControlLoopState;
+  orderedState: ControlLoopOrderedState;
+  description: string;
+  elements: ControlLoopElement[];
+}
+
 export class ControlLoop {
   public name: string;
   public version: string;

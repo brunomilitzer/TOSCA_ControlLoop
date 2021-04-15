@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { ControlLoopList } from '../../../../models/cl-list.model';
 import { LogService } from '../../../../shared/logging/service/log.service';
 import { ClService } from '../../services/cl.service';
-import { DataService } from '../../../../shared/services/data.service';
 
 @Component( {
   selector: 'tosca-cl-component',
@@ -14,12 +13,7 @@ export class ClComponent implements OnInit, AfterViewInit, OnDestroy {
   public clsSubscription: Subscription;
   public clList: ControlLoopList;
 
-  constructor(
-    private logger: LogService,
-    private dataService: DataService,
-    private clService: ClService,
-    private cd: ChangeDetectorRef
-  ) {
+  constructor( private logger: LogService, private clService: ClService, private cd: ChangeDetectorRef ) {
   }
 
   ngOnInit(): void {
