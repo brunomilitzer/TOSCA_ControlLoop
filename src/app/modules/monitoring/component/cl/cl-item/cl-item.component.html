@@ -1,9 +1,9 @@
 <li class="list-group">
-  <div toscaOrderedStateColor [orderedState]="cl.orderedState" id="{{ 'CLInstance' + index }}"
+  <div toscaStateColor [state]="cl.state" id="{{ 'CLInstance' + index }}"
        (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">{{ cl.name }}</div>
   <div class="cl-inner-panel" [(ngbCollapse)]="!isCollapsed" #collapse="ngbCollapse">
-    <div class="list-group" *ngFor="let clEl of cl.elements;">
-      <button toscaOrderedStateColor [orderedState]="clEl.orderedState">{{ clEl.description }}</button>
+    <div class="list-group" *ngFor="let clEl of clList.clEl">
+      <button toscaStateColor [state]="clEl.state">{{ clEl.description }}</button>
     </div>
   </div>
 </li>

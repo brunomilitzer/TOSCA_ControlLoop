@@ -1,17 +1,7 @@
 import { ControlLoopDefinition } from './cl-definition.model';
-import { ControlLoopElement } from './cl-element.model';
 import { ControlLoopState } from './enums/cl-state.enum';
 import { ControlLoopOrderedState } from './enums/cl-ordered-state.enum';
-
-export interface IControlLoop {
-  name: string;
-  version: string;
-  definition: ControlLoopDefinition;
-  state: ControlLoopState;
-  orderedState: ControlLoopOrderedState;
-  description: string;
-  elements: ControlLoopElement[];
-}
+import { ControlLoopElementObj } from './cl-element-obj.model';
 
 export class ControlLoop {
   public name: string;
@@ -20,5 +10,5 @@ export class ControlLoop {
   public state: ControlLoopState;
   public orderedState: ControlLoopOrderedState;
   public description: string;
-  public elements: ControlLoopElement[];
+  public elements: ControlLoopElementObj;
 }

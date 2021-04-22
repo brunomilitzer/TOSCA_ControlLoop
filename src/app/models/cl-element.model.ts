@@ -3,7 +3,6 @@ import { ControlLoopParticipantId } from './cl-participant-id.model';
 import { ControlLoopState } from './enums/cl-state.enum';
 import { ControlLoopOrderedState } from './enums/cl-ordered-state.enum';
 
-
 export class ControlLoopElement {
 
   constructor(
@@ -12,7 +11,6 @@ export class ControlLoopElement {
     public participantId: ControlLoopParticipantId,
     public state: ControlLoopState,
     public orderedState: ControlLoopOrderedState,
-    public description: string
-  ) {
+    public description: string ) {
   }
 }

@@ -2,11 +2,12 @@
   <ngb-panel id="{{ 'CLType' + numberToLetterConverter(i)}}"
              title="{{ 'CL type ' + numberToLetterConverter(i) }}"
              cardClass="cl-component-item"
-             *ngFor="let clEl of clList.cls; let i = index;"
+             *ngFor="let cl of clList.cls; let i = index;"
              #clPanel>
     <ng-template ngbPanelContent>
       <tosca-cl-item
-        [cl]="clEl"
+        [clList]="clList"
+        [cl]="cl"
         [title]="clPanel.title"
         [id]="clPanel.id"
         [index]="i">

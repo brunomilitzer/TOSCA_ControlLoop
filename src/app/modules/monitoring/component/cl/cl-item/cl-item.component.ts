@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlLoop } from '../../../../../models/cl.model';
 import { LogService } from '../../../../../shared/logging/service/log.service';
+import { ControlLoopList } from '../../../../../models/cl-list.model';
 
 @Component( {
   selector: 'tosca-cl-item',
@@ -8,6 +9,7 @@ import { LogService } from '../../../../../shared/logging/service/log.service';
   styleUrls: [ './cl-item.component.scss' ]
 } )
 export class ClItemComponent implements OnInit, OnDestroy {
+  @Input() clList: ControlLoopList;
   @Input() cl: ControlLoop;
   @Input() index: number;
   @Input() id: string;
