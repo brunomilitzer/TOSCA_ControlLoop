@@ -6,13 +6,16 @@
       <button
         toscaStateColor
         [state]="clEl.state"
-        (click)="openModal('clElementStatistics')">{{ clEl.description }}</button>
+        (click)="openModal(clEl)">{{ clEl.description }}</button>
     </div>
   </div>
 </li>
 
 <tosca-modal id="clElementStatistics">
-  <h1>Custom Moal</h1>
-  <p>This is a test!!!</p>
-  <button type="button" class="btn btn-outline-dark" (click)="closeModal('clElementStatistics')">Close</button>
+  <h1>Control Loop Element Statistics</h1>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary">{{ clList }}</button>
+
+  </div>
+  <!--<button type="button" class="btn btn-outline-dark" (click)="closeModal('clElementStatistics')">Close</button>-->
 </tosca-modal>
