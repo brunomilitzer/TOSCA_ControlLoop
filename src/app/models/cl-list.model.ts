@@ -35,7 +35,7 @@ export class ControlLoopList {
   }
 
   public isEmpty(): boolean {
-    return this.controlLoops.length === 0;
+    return this.cls.length === 0;
   }
 
   public clear(): void {

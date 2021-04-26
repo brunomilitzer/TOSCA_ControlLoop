@@ -5,10 +5,8 @@ import { environment } from '../../../environments/environment';
 import { map, tap } from 'rxjs/operators';
 import { ControlLoopList } from '../../models/cl-list.model';
 import { ClService } from '../../modules/monitoring/services/cl.service';
-import { ControlLoopElementList } from '../../models/cl-element-list.model';
 
 const API_URL = environment.apiUrl;
-const CLEL_URL = 'http://localhost:4200/assets/cl-element-statistics.json';
 
 @Injectable( { providedIn: 'root' } )
 export class DataService {
@@ -23,18 +21,6 @@ export class DataService {
         } ),
         tap( clList => {
           this.clService.setControlLoopListInstatiation( clList );
-        } )
-      );
-  }
-
-  public fetchControlLoopElementList(): Observable<ControlLoopElementList> {
-    return this.http.get( CLEL_URL )
-      .pipe(
-        map( responseData => {
-          return ControlLoopElementList.fromJSON( responseData );
-        } ),
-        tap( clElList => {
-          this.clService.setControlLoopElementList( clElList );
         } )
       );
   }
