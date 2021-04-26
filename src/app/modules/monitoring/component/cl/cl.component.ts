@@ -39,7 +39,7 @@ export class ClComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.logger.debug( '======== CL Component Destroy ========' );
+
     this.clsSubscription.unsubscribe();
   }
-
 }
