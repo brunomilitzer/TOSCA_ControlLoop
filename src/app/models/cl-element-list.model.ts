@@ -16,8 +16,14 @@ export class ControlLoopElementList {
     return this.controlLoopElementStatistics.length;
   }
 
-  public get clEl(): ControlLoopElementStatistic[] {
+  public get clElStats(): ControlLoopElementStatistic[] {
     return this.controlLoopElementStatistics;
+  }
+
+  public get clElStat(): ControlLoopElementStatistic {
+    const size = this.controlLoopElementStatistics.length;
+
+    return this.controlLoopElementStatistics[size - 1];
   }
 
   private push( newClEl: ControlLoopElementStatistic ): void {

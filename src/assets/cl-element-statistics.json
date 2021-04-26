@@ -9,6 +9,16 @@
       "timeStamp": "2021-04-23T11:52:32.895Z",
       "controlLoopState": "PASSIVE",
       "clElementUptime": 0
+    },
+    {
+      "id": "709c62b3-8918-41b9-a747-d21eb79c6c21",
+      "participantId": {
+        "name": "DCAEParticipant1",
+        "version": "1.0.0"
+      },
+      "timeStamp": "2021-04-23T11:52:32.895Z",
+      "controlLoopState": "PASSIVE",
+      "clElementUptime": 0
     }
   ]
 }

@@ -5,6 +5,7 @@ import { ControlLoopList } from '../../../../../models/cl-list.model';
 import { ModalService } from '../../../../../shared/modal/services/modal.service';
 import { ClService } from '../../../services/cl.service';
 import { ControlLoopElementList } from '../../../../../models/cl-element-list.model';
+import { ControlLoopElementStatistic } from '../../../../../models/cl-element-statistic.model';
 
 @Component( {
   selector: 'tosca-cl-item',
@@ -15,9 +16,10 @@ export class ClItemComponent implements OnInit, OnDestroy {
   @Input() clList: ControlLoopList;
   @Input() cl: ControlLoop;
   @Input() index: number;
+  @Input() clElStatistics: ControlLoopElementStatistic;
+  @Input() clElList: ControlLoopElementList;
 
   public isCollapsed = false;
-  private clElList: ControlLoopElementList;
 
   constructor( private logger: LogService, private modalService: ModalService, private clService: ClService ) {
   }
@@ -28,7 +30,6 @@ export class ClItemComponent implements OnInit, OnDestroy {
   }
 
   openModal( id: any ): void {
-    console.log( id );
     this.modalService.open( id );
   }
 

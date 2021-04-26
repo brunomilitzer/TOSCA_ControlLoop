@@ -5,7 +5,7 @@ tosca-modal {
   .tosca-modal {
     /* modal container fixed across whole screen */
     position: fixed;
-    top: 0;
+    top: 60px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -17,7 +17,7 @@ tosca-modal {
     overflow: auto;
 
     .tosca-modal-body {
-      padding: 20px;
+      padding: 20px 60px;
       background: #fff;
 
       /* margin exposes part of the modal background */

@@ -6,16 +6,48 @@
       <button
         toscaStateColor
         [state]="clEl.state"
-        (click)="openModal(clEl)">{{ clEl.description }}</button>
+        (click)="openModal('clElementStatistics')">{{ clEl.description }}</button>
     </div>
   </div>
 </li>
 
 <tosca-modal id="clElementStatistics">
-  <h1>Control Loop Element Statistics</h1>
-  <div ngbDropdown class="d-inline-block">
-    <button class="btn btn-outline-primary">{{ clList }}</button>
-
+  <h3 class="mb-3">Control Loop Element Statistics</h3>
+  <div class="row">
+    <div class="col-3">
+      <h6 class="mb-2">Element ID:</h6>
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-dark" id="clElStatId" ngbDropdownToggle>{{ clElList.clElStat.id }}</button>
+        <div ngbDropdownMenu aria-labelledby="clElStatId">
+          <button
+            ngbDropdownItem
+            *ngFor="let elStat of clElList.clElStats">{{ elStat.id }}</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <h6 class="mb-2">Participant Name:</h6>
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-dark" id="clElPartName"
+                ngbDropdownToggle>{{ clElList.clElStat.participantId.name }}</button>
+        <div ngbDropdownMenu aria-labelledby="clElPartName">
+          <button
+            ngbDropdownItem
+            *ngFor="let elStat of clElList.clElStats">{{ elStat.participantId.name }}</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <h6 class="mb-2">Participant Version:</h6>
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-dark" id="clElPartVersion"
+                ngbDropdownToggle>{{ clElList.clElStat.participantId.version }}</button>
+        <div ngbDropdownMenu aria-labelledby="clElPartVersion">
+          <button
+            ngbDropdownItem
+            *ngFor="let elStat of clElList.clElStats">{{ elStat.participantId.version }}</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <!--<button type="button" class="btn btn-outline-dark" (click)="closeModal('clElementStatistics')">Close</button>-->
 </tosca-modal>
